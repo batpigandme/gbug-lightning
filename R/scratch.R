@@ -34,3 +34,23 @@ lf <- lazy_frame(gtcars)
 # relocate lets you move columns around
 lf %>% relocate("year") %>%
   select(1:3) # select the first three cols
+
+# programmatically rename columns
+lf %>% rename_with(toupper)
+
+# slice_* functions ungrouped
+
+lf %>% #lf to view the SQL
+  select(c(1:5, "msrp")) %>%
+  slice_max(msrp, n = 5)
+
+gtcars2 %>%
+  select(c(1:5, "msrp")) %>%
+  slice_max(msrp, n = 5)
+
+# slice_* functions grouped
+gtcars2 %>%
+  select(c(1:5, "msrp")) %>%
+  group_by(bdy_style) %>%
+  slice_max(msrp, n = 5)
+
