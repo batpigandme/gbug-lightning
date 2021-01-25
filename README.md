@@ -1,4 +1,4 @@
-# gbug-lightning
+# GBUG Lightning: What's new in dbplyr 2.0.0?
 
 ⚡️ Lightning talk for Greater Boston useR Group, January 2020
 
